@@ -1,0 +1,7 @@
+# Default ignored files
+/**/.idea/
+/packages/
+/.git/
+# all bin and obj folders. Don't name anything that
+/**/bin/
+/**/obj/
