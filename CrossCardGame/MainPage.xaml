@@ -5,18 +5,65 @@
              xmlns:xf="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              x:Class="CrossCardGame.MainPage">
 
-    <StackLayout>
-        <xf:MaterialCard>
-            <StackLayout Orientation="Vertical">
-                <StackLayout Orientation="Horizontal">
-                    <xf:MaterialLabel Text="YEAH!"/>
-                    <xf:MaterialIcon Source="yeah"/>
+    <Grid>
+        <!-- Things listed first go on the bottom in XAML -->
+        <xf:MaterialIcon Source="yeah" Aspect="AspectFit" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"/>
+        <StackLayout Grid.Row="0" Grid.Column="0">
+            <xf:MaterialCard BackgroundColor="Transparent">
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <xf:MaterialLabel Text="YEAH!"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <xf:MaterialIcon Source="wha"/>
-                </StackLayout>
-            </StackLayout>
-        </xf:MaterialCard>
-    </StackLayout>
-
+            </xf:MaterialCard>
+        </StackLayout>
+    </Grid>
 </ContentPage>
