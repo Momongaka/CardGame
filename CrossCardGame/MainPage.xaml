@@ -7,60 +7,17 @@
 
     <Grid>
         <!-- Things listed first go on the bottom in XAML -->
-        <xf:MaterialIcon Source="yeah" Aspect="AspectFit" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"/>
+        <xf:MaterialIcon Source="BlackStripeBanner" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"/>
         <StackLayout Grid.Row="0" Grid.Column="0">
             <xf:MaterialCard BackgroundColor="Transparent">
                 <StackLayout Orientation="Vertical">
                     <StackLayout Orientation="Horizontal">
-                        <xf:MaterialLabel Text="YEAH!"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
-                        <xf:MaterialIcon Source="wha" WidthRequest="50"/>
+                        <xf:MaterialLabel Text="Welcome to Truth or Drink!" 
+                                          VerticalTextAlignment="Center" 
+                                          HorizontalTextAlignment="Center" 
+                                          TextColor="White"
+                                          FontAttributes="Bold"
+                                          FontSize="50"/>
                     </StackLayout>
                 </StackLayout>
             </xf:MaterialCard>
