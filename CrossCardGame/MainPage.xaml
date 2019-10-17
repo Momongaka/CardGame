@@ -15,7 +15,7 @@
                         <xf:MaterialLabel Text="Welcome to Truth or Drink!" 
                                           VerticalTextAlignment="End" 
                                           HorizontalTextAlignment="Center"
-                                          TextColor="OrangeRed"
+                                          TextColor="WhiteSmoke"
                                           FontAttributes="Bold"
                                           FontSize="50"/>
                     </StackLayout>
