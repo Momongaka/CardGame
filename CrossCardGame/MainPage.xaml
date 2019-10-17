@@ -8,14 +8,14 @@
     <Grid>
         <!-- Things listed first go on the bottom in XAML -->
         <xf:MaterialIcon Source="BlackStripeBanner" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"/>
-        <StackLayout Grid.Row="0" Grid.Column="0">
+        <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
             <xf:MaterialCard BackgroundColor="Transparent">
-                <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Vertical" >
                     <StackLayout Orientation="Horizontal">
                         <xf:MaterialLabel Text="Welcome to Truth or Drink!" 
-                                          VerticalTextAlignment="Center" 
-                                          HorizontalTextAlignment="Center" 
-                                          TextColor="White"
+                                          VerticalTextAlignment="End" 
+                                          HorizontalTextAlignment="Center"
+                                          TextColor="OrangeRed"
                                           FontAttributes="Bold"
                                           FontSize="50"/>
                     </StackLayout>
