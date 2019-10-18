@@ -23,6 +23,8 @@
                     <ui:MaterialCard CornerRadius="3" Elevation="2" VerticalOptions="FillAndExpand"
                                      HorizontalOptions="FillAndExpand" IsClickable="True"
                                      BackgroundColor="DarkGray">
+                        <ListView x:Name="Player" ItemsSource="{}">
+                        </ListView>
                     </ui:MaterialCard>
                 </StackLayout>
             </ui:MaterialCard>

@@ -9,6 +9,7 @@ namespace CrossCardGame.GameObjects
         public GameParty()
         {
             Party = new ObservableCollection<Player>();
+            Party.Add(new Player(1,"Daniel","M","F"));
         }
 
         public void AddPlayerToParty(Player player)
