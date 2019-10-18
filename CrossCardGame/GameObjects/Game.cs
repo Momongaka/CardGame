@@ -2,8 +2,8 @@ namespace CrossCardGame.GameObjects
 {
     public class Game
     {
-        public string PlayerA { get; private set; }
-        public string PlayerB { get; private set; }
+        private string PlayerA { get; set; }
+        private string PlayerB { get; set; }
 
         public Game(string a, string b)
         {
