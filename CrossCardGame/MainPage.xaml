@@ -7,7 +7,7 @@
 
     <Grid>
         <!-- Things listed first go on the bottom in XAML -->
-        <xf:MaterialIcon Source="BlackStripeBanner" Aspect="Fill" HorizontalOptions="FillAndExpand"
+        <xf:MaterialIcon Source="SmokeyBanner" Aspect="Fill" HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" />
         <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
             <xf:MaterialCard BackgroundColor="Transparent">
