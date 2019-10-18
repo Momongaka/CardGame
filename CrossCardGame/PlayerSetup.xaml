@@ -8,23 +8,21 @@
         <!-- Things listed first go on the bottom in XAML -->
         <ui:MaterialIcon Source="SmokeyBanner" Aspect="Fill" HorizontalOptions="FillAndExpand"
                          VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" />
-        <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+        <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Center">
             <ui:MaterialCard BackgroundColor="Transparent">
                 <StackLayout Orientation="Vertical">
                     <StackLayout Orientation="Horizontal">
                         <ui:MaterialLabel Text="Form Your Party!"
                                           VerticalTextAlignment="Start"
                                           HorizontalTextAlignment="Center"
+                                          HorizontalOptions="CenterAndExpand"
                                           TextColor="White"
                                           FontAttributes="Bold"
-                                          FontSize="50" />
-                        
-                        <ui:MaterialCard CornerRadius="2" Elevation="1" HeightRequest="80" HorizontalOptions="FillAndExpand" />
+                                          FontSize="40" />
                     </StackLayout>
                 </StackLayout>
             </ui:MaterialCard>
+                <ui:MaterialCard CornerRadius="2" Elevation="1" HeightRequest="25" HorizontalOptions="FillAndExpand" />
         </StackLayout>
     </Grid>
 </ContentPage>
-
-
