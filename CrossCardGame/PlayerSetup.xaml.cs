@@ -1,3 +1,4 @@
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,6 +10,10 @@ namespace CrossCardGame
         public PlayerSetup()
         {
             InitializeComponent();
+        }
+
+        private void MaterialCard_OnClicked(object sender, EventArgs e)
+        {
         }
     }
 }

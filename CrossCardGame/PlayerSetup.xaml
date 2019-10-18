@@ -20,9 +20,12 @@
                                           FontAttributes="Bold"
                                           FontSize="40" />
                     </StackLayout>
+                    <ui:MaterialCard CornerRadius="3" Elevation="2" VerticalOptions="FillAndExpand"
+                                     HorizontalOptions="FillAndExpand" IsClickable="True"
+                                     BackgroundColor="DarkGray">
+                    </ui:MaterialCard>
                 </StackLayout>
             </ui:MaterialCard>
-                <ui:MaterialCard CornerRadius="2" Elevation="1" HeightRequest="25" HorizontalOptions="FillAndExpand" />
         </StackLayout>
     </Grid>
 </ContentPage>
