@@ -6,6 +6,8 @@ namespace CrossCardGame.GameObjects
         public string Name { get; private set; }
         public string Gender { get; private set; }
         public string GenderPreference { get; private set; }
+        
+        //public string PlayerString => Name + " / " + Gender + " / " + GenderPreference;
 
         public Player()
         {
