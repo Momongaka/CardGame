@@ -3,22 +3,31 @@ using System.Collections.ObjectModel;
 using CrossCardGame.GameObjects;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XF.Material.Forms.UI;
 
 namespace CrossCardGame
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PlayerSetup : ContentPage
     {
-        public ObservableCollection<Player> ObserveParty = new ObservableCollection<Player>(GameParty.Party);
         public PlayerSetup()
         {
             InitializeComponent();
-            
         }
         
         private void Button_OnClicked(object sender, EventArgs e)
         {
-            
+            // TODO spawn a new window to make a Player
+            GameData.Instance.Party.Add(new Player(1, "Fred", "Male", "Female"));
+        }
+
+        private void MaterialCard_OnClicked(object sender, EventArgs e)
+        {
+            var item = sender as MaterialCard;
+            if (item == null) return;
+            var player = item.BindingContext as Player;
+            if (player == null) return;
+            // destroy all humans
         }
     }
 }

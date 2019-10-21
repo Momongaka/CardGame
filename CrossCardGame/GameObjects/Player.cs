@@ -7,6 +7,10 @@ namespace CrossCardGame.GameObjects
         public string Gender { get; private set; }
         public string GenderPreference { get; private set; }
 
+        public Player()
+        {
+        }
+
         public Player(int id, string name, string gender, string genderPreference)
         {
             IdNum = id;
