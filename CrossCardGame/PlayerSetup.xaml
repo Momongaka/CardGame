@@ -3,7 +3,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
-             x:Class="CrossCardGame.PlayerSetup">
+             x:Class="CrossCardGame.PlayerSetup"
+             x:Name = "MyPage">
     <Grid>
         <!-- Things listed first go on the bottom in XAML -->
         <ui:MaterialIcon Source="SmokeyBanner" Aspect="Fill" HorizontalOptions="FillAndExpand"
@@ -23,11 +24,24 @@
                     <ui:MaterialCard CornerRadius="3" Elevation="2" VerticalOptions="FillAndExpand"
                                      HorizontalOptions="FillAndExpand" IsClickable="True"
                                      BackgroundColor="DarkGray">
-                        <ListView x:Name="Player" ItemsSource="{}">
+                        <ListView ItemsSource ="{Binding Source={x:Reference MyPage}, Path=ObserveParty}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ui:MaterialCard CornerRadius="3" Elevation="2" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" IsClickable="True">
+                                            <Grid>
+                                                <Label Text="{Binding Name}" />
+                                            </Grid>
+                                        </ui:MaterialCard>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
                         </ListView>
                     </ui:MaterialCard>
+                    <Button Text="Add Player" HorizontalOptions="Center" VerticalOptions="End"/>
                 </StackLayout>
             </ui:MaterialCard>
+
         </StackLayout>
     </Grid>
 </ContentPage>

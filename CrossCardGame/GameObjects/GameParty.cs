@@ -4,7 +4,7 @@ namespace CrossCardGame.GameObjects
 {
     public class GameParty
     {
-        public ObservableCollection<Player> Party { get; set; }
+        public static ObservableCollection<Player> Party { get; set; }
 
         public GameParty()
         {
