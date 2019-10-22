@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             x:Class="CrossCardGame.PlayerInfo">
+    <Grid>
+        <!-- Things listed first go on the bottom in XAML -->
+        <ui:MaterialIcon Source="SmokeyBanner" Aspect="Fill" HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"/>
+        <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+            <ui:MaterialCard BackgroundColor="Transparent">
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal" >
+                        <ui:MaterialTextField Placeholder="Player Name" TextFontSize="25"></ui:MaterialTextField>
+                    </StackLayout>
+                </StackLayout>
+            </ui:MaterialCard>
+        </StackLayout>
+    </Grid>
+</ContentPage>

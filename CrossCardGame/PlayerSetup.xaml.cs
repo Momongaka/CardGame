@@ -4,6 +4,7 @@ using CrossCardGame.GameObjects;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XF.Material.Forms.UI;
+using XF.Material.Forms.UI.Dialogs;
 
 namespace CrossCardGame
 {
@@ -17,8 +18,9 @@ namespace CrossCardGame
         
         private void Button_OnClicked(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new PlayerInfo());
             // TODO spawn a new window to make a Player
-            GameData.Instance.Party.Add(new Player(1, "Fred", "Male", "Female"));
+            //GameData.Instance.Party.Add(new Player(1, "Fred", "Male", "Female"));
         }
 
         private void MaterialCard_OnClicked(object sender, EventArgs e)

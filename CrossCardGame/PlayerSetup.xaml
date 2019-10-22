@@ -32,19 +32,20 @@
                                                          HorizontalOptions="FillAndExpand" IsClickable="True" Clicked="MaterialCard_OnClicked">
                                             <!-- The grid is only needed if more data will be put -->
                                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                                                <Grid>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="*"/>
-                                                        <ColumnDefinition Width="Auto"/>
-                                                        <ColumnDefinition Width="*"/>
-                                                    </Grid.ColumnDefinitions>
-                                                        <ui:MaterialTextField Grid.Column="0" Text="{Binding Name}" TextFontSize="15"></ui:MaterialTextField>
-                                                        <ui:MaterialTextField Grid.Column="1" Text="{Binding Gender}" TextFontSize="15"></ui:MaterialTextField>
-                                                        <ui:MaterialTextField Grid.Column="2" Text="{Binding GenderPreference}" TextFontSize="15"></ui:MaterialTextField>
-                                                        <!-- <ui:MaterialLabel Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold"/> -->
-                                                        <!-- <ui:MaterialLabel Margin="0,0,8,8" Text="{Binding Gender}" FontSize="Medium"/> -->
-                                                        <!-- <ui:MaterialLabel Margin="0,0,8,8" Text="{Binding GenderPreference}" FontSize="Medium"/> -->
-                                                </Grid>
+                                                <!-- <Grid> -->
+                                                <!--     <Grid.ColumnDefinitions> -->
+                                                <!--         <ColumnDefinition Width="*"/> -->
+                                                <!--         <ColumnDefinition Width="*"/> -->
+                                                <!--         <ColumnDefinition Width="*"/> -->
+                                                <!--     </Grid.ColumnDefinitions> -->
+                                                    <!-- <ui:MaterialTextField Grid.Column="0" Placeholder="Player" Text="{Binding Name}" TextFontSize="15"></ui:MaterialTextField> -->
+                                                        <!-- <ui:MaterialTextField Grid.Column="1" Placeholder="Gender" Text="{Binding Gender}" TextFontSize="15"></ui:MaterialTextField> -->
+                                                        <!-- <ui:MaterialTextField Grid.Column="2" Placeholder="Gender\Pref" Text="{Binding GenderPreference}" TextFontSize="15"></ui:MaterialTextField> -->
+
+                                                <ui:MaterialLabel Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold"/>
+                                                <ui:MaterialLabel Margin="0,0,8,8" Text="{Binding Gender}" FontSize="Medium"/>
+                                                <ui:MaterialLabel Margin="0,0,8,8" Text="{Binding GenderPreference}" FontSize="Medium"/>
+                                                <!-- </Grid> -->
                                             </StackLayout>
                                         </ui:MaterialCard>
                                     </ViewCell>
