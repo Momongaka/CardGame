@@ -20,6 +20,9 @@ namespace CrossCardGame.GameObjects
             }
         }
         
+        public string[] Genders { get; set; } = new[] {"Male", "Female"};
+        public string[] SexualPreferences { get; set; } = new [] {"Straight", "Gay", "Lesbian", "Bi"};
+
         public ObservableCollection<Player> Party { get; set; }
         
         public Queue<string>[] Decks { get; set; }

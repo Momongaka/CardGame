@@ -5,7 +5,7 @@
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              xmlns:gameObjects="clr-namespace:CrossCardGame.GameObjects;assembly=CrossCardGame"
              x:Class="CrossCardGame.PlayerSetup"
-             x:Name = "TopPage">
+             x:Name="TopPage">
     <Grid>
         <!-- Things listed first go on the bottom in XAML -->
         <ui:MaterialIcon Source="SmokeyBanner" Aspect="Fill" HorizontalOptions="FillAndExpand"
@@ -31,7 +31,7 @@
                                         <ui:MaterialCard MinimumHeightRequest="40" VerticalOptions="Fill" Padding="1"
                                                          HorizontalOptions="FillAndExpand" IsClickable="True" Clicked="MaterialCard_OnClicked">
                                             <!-- The grid is only needed if more data will be put -->
-                                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="StartAndExpand">
                                                 <!-- <Grid> -->
                                                 <!--     <Grid.ColumnDefinitions> -->
                                                 <!--         <ColumnDefinition Width="*"/> -->
@@ -41,10 +41,11 @@
                                                     <!-- <ui:MaterialTextField Grid.Column="0" Placeholder="Player" Text="{Binding Name}" TextFontSize="15"></ui:MaterialTextField> -->
                                                         <!-- <ui:MaterialTextField Grid.Column="1" Placeholder="Gender" Text="{Binding Gender}" TextFontSize="15"></ui:MaterialTextField> -->
                                                         <!-- <ui:MaterialTextField Grid.Column="2" Placeholder="Gender\Pref" Text="{Binding GenderPreference}" TextFontSize="15"></ui:MaterialTextField> -->
-
-                                                <ui:MaterialLabel Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold"/>
-                                                <ui:MaterialLabel Margin="0,0,8,8" Text="{Binding Gender}" FontSize="Medium"/>
-                                                <ui:MaterialLabel Margin="0,0,8,8" Text="{Binding GenderPreference}" FontSize="Medium"/>
+                                                <ui:MaterialLabel Text="{Binding PlayerString}" FontSize="Medium" FontAttributes="Bold"/>
+                                                
+                                                <!-- <ui:MaterialLabel Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold"/> -->
+                                                <!-- <ui:MaterialLabel Margin="0,0,8,8" Text="{Binding Gender}" FontSize="Medium"/> -->
+                                                <!-- <ui:MaterialLabel Margin="0,0,8,8" Text="{Binding SexualPreference}" FontSize="Medium"/> -->
                                                 <!-- </Grid> -->
                                             </StackLayout>
                                         </ui:MaterialCard>

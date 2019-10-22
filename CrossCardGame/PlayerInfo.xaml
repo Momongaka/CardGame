@@ -3,19 +3,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
-             x:Class="CrossCardGame.PlayerInfo">
+             xmlns:gameObjects="clr-namespace:CrossCardGame.GameObjects;assembly=CrossCardGame"
+             x:Class="CrossCardGame.PlayerInfo"
+             x:Name="TopPage">
     <Grid>
         <!-- Things listed first go on the bottom in XAML -->
         <ui:MaterialIcon Source="SmokeyBanner" Aspect="Fill" HorizontalOptions="FillAndExpand"
-                         VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"/>
+                         VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" />
         <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
-            <ui:MaterialCard BackgroundColor="Transparent">
+            <ui:MaterialCard BackgroundColor="DarkGray">
                 <StackLayout Orientation="Vertical">
-                    <StackLayout Orientation="Horizontal" >
-                        <ui:MaterialTextField Placeholder="Player Name" TextFontSize="25"></ui:MaterialTextField>
+                    <StackLayout Orientation="Horizontal">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <ui:MaterialTextField x:Name="ChoicePlayerName" Grid.Row="0" Placeholder="Player Name"
+                                                  TextFontSize="15" HorizontalOptions="FillAndExpand" InputType="Text" />
+                            <ui:MaterialTextField x:Name="ChoicePlayerGender" Grid.Row="1" Placeholder="Player Gender"
+                                                  Choices="{Binding Source={x:Static gameObjects:GameData.Instance}, Path=Genders}"
+                                                  TextFontSize="15" InputType="Choice"/>
+                            <ui:MaterialTextField x:Name="ChoicePlayerSexualPreference" Grid.Row="2" Placeholder="Sexual Preference"
+                                                  Choices="{Binding Source={x:Static gameObjects:GameData.Instance}, Path=SexualPreferences}"
+                                                  TextFontSize="15" InputType="Choice"/>
+                        </Grid>
                     </StackLayout>
                 </StackLayout>
             </ui:MaterialCard>
+            <Button VerticalOptions="End" Text="Add Player" FontSize="20" Clicked="Button_OnClicked" />
         </StackLayout>
     </Grid>
 </ContentPage>
