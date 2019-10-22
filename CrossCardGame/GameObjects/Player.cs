@@ -21,7 +21,7 @@ namespace CrossCardGame.GameObjects
             IdNum = id;
         }
 
-        public Player(int id, string name, string gender, string sexualPreference, Array punishmentPreference)
+        public Player(int id, string name, string gender, string sexualPreference, string punishmentPreference)
         {
             IdNum = id;
             Name = name;

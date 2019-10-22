@@ -16,6 +16,7 @@ namespace CrossCardGame
     public partial class PlayerInfo : ContentPage
     {
         public int PiD { get; set; }
+        public string Punish { get; set; }
         public PlayerInfo()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace CrossCardGame
         }
         private void AddtoParty(object sender, EventArgs e)
         {
-            GameData.Instance.Party.Add(new Player(GameData.Instance.Party.Max(a => a.IdNum)+1, ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text, GameData.Instance.Punishment));
+            GameData.Instance.Party.Add(new Player(GameData.Instance.Party.Max(a => a.IdNum)+1, ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text, Punish));
             Navigation.PushAsync(new PlayerSetup());
         }
         
@@ -41,7 +42,8 @@ namespace CrossCardGame
         {
             //Show confirmation dialog for choosing one or more.
                 var result =  MaterialDialog.Instance.SelectChoiceAsync(title: "Select Your Punishments", selectedIndex: 0, choices: GameData.Instance.Punishment).Result;
-            //GameData.Instance.Punishment[result];
+                Punish = GameData.Instance.Punishment[result];
+                //GameData.Instance.Punishment[result];
         }
         
     }
