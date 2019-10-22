@@ -30,9 +30,9 @@
                                                   TextFontSize="15" InputType="Choice"/>
                         </Grid>
                     </StackLayout>
+                    <Button VerticalOptions="End" Text="Add Player" FontSize="20" Clicked="Button_OnClicked" />
                 </StackLayout>
             </ui:MaterialCard>
-            <Button VerticalOptions="End" Text="Add Player" FontSize="20" Clicked="Button_OnClicked" />
         </StackLayout>
     </Grid>
 </ContentPage>
