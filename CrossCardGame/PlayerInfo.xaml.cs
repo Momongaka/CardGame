@@ -13,16 +13,29 @@ namespace CrossCardGame
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PlayerInfo : ContentPage
     {
-        public PlayerInfo()
+        public int PiD { get; set; }
+        public PlayerInfo(int id)
         {
+            PiD = id;
             InitializeComponent();
 
+        }
+
+        public PlayerInfo()
+        {
+            
         }
         
         private void Button_OnClicked(object sender, EventArgs e)
         {
-            GameData.Instance.Party.Add(new Player(GameData.Instance.Party.Count() + 1, ChoicePlayerName.Text,
-                ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text));
+            GameData.Instance.Party.Add(new Player(GameData.Instance.Party.Count() + 1, ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text));
+            Navigation.PushAsync(new PlayerSetup());
+        }
+        
+        private void DeleteMe(object sender, EventArgs e)
+        {
+            var playerToDelete = GameData.Instance.Party.FirstOrDefault(a => a.IdNum == PiD);
+            GameData.Instance.Party.Remove(playerToDelete);
             Navigation.PushAsync(new PlayerSetup());
         }
     }

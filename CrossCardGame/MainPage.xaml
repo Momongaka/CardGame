@@ -14,7 +14,7 @@
             <xf:MaterialCard BackgroundColor="Transparent">
                 <StackLayout Orientation="Vertical">
                     <StackLayout Orientation="Horizontal">
-                        <xf:MaterialLabel Text="Welcome to Truth or Drink!"
+                        <xf:MaterialLabel Text="Welcome to Smokey!"
                                           VerticalTextAlignment="End"
                                           HorizontalTextAlignment="Center"
                                           TextColor="WhiteSmoke"

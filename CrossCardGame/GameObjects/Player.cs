@@ -11,6 +11,11 @@ namespace CrossCardGame.GameObjects
 
         public Player()
         {
+            
+        }
+        public Player(int id)
+        {
+            IdNum = id;
         }
 
         public Player(int id, string name, string gender, string sexualPreference)

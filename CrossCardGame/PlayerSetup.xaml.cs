@@ -25,11 +25,13 @@ namespace CrossCardGame
 
         private void MaterialCard_OnClicked(object sender, EventArgs e)
         {
+
             var item = sender as MaterialCard;
             if (item == null) return;
             var player = item.BindingContext as Player;
             if (player == null) return;
             // destroy all humans
+            Navigation.PushAsync(new PlayerInfo(player.IdNum));
         }
     }
 }
