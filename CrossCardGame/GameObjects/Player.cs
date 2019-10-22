@@ -1,3 +1,5 @@
+using System;
+
 namespace CrossCardGame.GameObjects
 {
     public class Player
@@ -6,8 +8,9 @@ namespace CrossCardGame.GameObjects
         public string Name { get; private set; }
         public string Gender { get; private set; }
         public string SexualPreference { get; private set; }
+        public string PunishmentPreference { get; private set; }
         
-        public string PlayerString => Name + " / " + Gender + " / " + SexualPreference;
+        public string PlayerString => Name + " / " + Gender + " / " + SexualPreference + " / " + PunishmentPreference;
 
         public Player()
         {
@@ -18,12 +21,13 @@ namespace CrossCardGame.GameObjects
             IdNum = id;
         }
 
-        public Player(int id, string name, string gender, string sexualPreference)
+        public Player(int id, string name, string gender, string sexualPreference, Array punishmentPreference)
         {
             IdNum = id;
             Name = name;
             Gender = gender;
             SexualPreference = sexualPreference;
+            PunishmentPreference = punishmentPreference;
         }
     }
 }

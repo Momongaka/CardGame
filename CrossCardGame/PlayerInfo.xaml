@@ -19,6 +19,7 @@
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <ui:MaterialTextField x:Name="ChoicePlayerName" Grid.Row="0" Placeholder="Player Name"
                                                   TextFontSize="15" HorizontalOptions="FillAndExpand" InputType="Text" />
@@ -28,6 +29,9 @@
                             <ui:MaterialTextField x:Name="ChoicePlayerSexualPreference" Grid.Row="2" Placeholder="Sexual Preference"
                                                   Choices="{Binding Source={x:Static gameObjects:GameData.Instance}, Path=SexualPreferences}"
                                                   TextFontSize="15" InputType="Choice"/>
+                            <!--<ui:MaterialCheckboxGroup x:Name="ChoicePunishments" Grid.Row="3" FontSize="15" VerticalOptions="CenterAndExpand"
+                                                  Choices="{Binding Source={x:Static gameObjects:GameData.Instance}, Path=Punishment}"/>-->
+                            <Button Grid.Row="3" Text="PunishMe" VerticalOptions="End" HorizontalOptions="Center" Clicked="PunishMe"></Button>
                         </Grid>
                     </StackLayout>
                     <Button VerticalOptions="End" Text="Add Player" FontSize="20" Clicked="AddtoParty" />
