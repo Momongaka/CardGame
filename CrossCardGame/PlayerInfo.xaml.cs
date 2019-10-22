@@ -26,7 +26,7 @@ namespace CrossCardGame
         }
         private void AddtoParty(object sender, EventArgs e)
         {
-            GameData.Instance.Party.Add(new Player(GameData.Instance.Party.Count() + 1, ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text, ));
+            GameData.Instance.Party.Add(new Player(GameData.Instance.Party.Max(a => a.IdNum)+1, ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text, GameData.Instance.Punishment));
             Navigation.PushAsync(new PlayerSetup());
         }
         
@@ -40,11 +40,10 @@ namespace CrossCardGame
         private void PunishMe(object sender, EventArgs e)
         {
             //Show confirmation dialog for choosing one or more.
-                var result =  MaterialDialog.Instance.SelectChoiceAsync(title: "Select Your Punishments", 
-                selectedIndex: 0,
-                choices: GameData.Instance.Punishment).Result;
-                return GameData.Instance.Punishment[result];
+                var result =  MaterialDialog.Instance.SelectChoiceAsync(title: "Select Your Punishments", selectedIndex: 0, choices: GameData.Instance.Punishment).Result;
+            //GameData.Instance.Punishment[result];
         }
+        
     }
 
 }
