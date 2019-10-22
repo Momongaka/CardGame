@@ -34,7 +34,7 @@
                             <Button Grid.Row="3" Text="PunishMe" VerticalOptions="End" HorizontalOptions="Center" Clicked="PunishMe"></Button>
                         </Grid>
                     </StackLayout>
-                    <Button VerticalOptions="End" Text="Add Player" FontSize="20" Clicked="AddtoParty" />
+                    <Button VerticalOptions="End" Text="Add Player" FontSize="20" Clicked="AddParty" />
                     <Button VerticalOptions="End" Text="Delete Player" FontSize="20" Clicked="DeleteMe" />
                 </StackLayout>
             </ui:MaterialCard>
