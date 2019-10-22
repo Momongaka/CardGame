@@ -26,7 +26,7 @@ namespace CrossCardGame
             
         }
         
-        private void Button_OnClicked(object sender, EventArgs e)
+        private void AddtoParty(object sender, EventArgs e)
         {
             GameData.Instance.Party.Add(new Player(GameData.Instance.Party.Count() + 1, ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text));
             Navigation.PushAsync(new PlayerSetup());
