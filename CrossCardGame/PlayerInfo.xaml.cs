@@ -15,35 +15,41 @@ namespace CrossCardGame
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PlayerInfo : ContentPage
     {
-        public int PiD { get; set; }
+        public Player Player { get; set; }
         public string Punish { get; set; }
         public PlayerInfo()
         {
             InitializeComponent();
+            ChoicePlayerGender.Choices = Constants.Genders;
+            ChoicePlayerSexualPreference.Choices = Constants.SexualPreferences;
         }
-        public PlayerInfo(int id)
+        public PlayerInfo(Player player) : this()
         {
-            PiD = id;
+            Player = player;
         }
-        private void AddParty(object sender, EventArgs e)
+        private async void AddParty(object sender, EventArgs e)
         {
-            GameData.Instance.Party.Add(new Player((GameData.Instance.Party.Max(a => a.IdNum)+1), ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text, Punish));
-            Navigation.PushAsync(new PlayerSetup());
+            if (Player != null)
+                GameData.Instance.Party.Remove(Player);
+            int index = 1;
+            if (GameData.Instance.Party.Count > 0) index = GameData.Instance.Party.Max(a => a.IdNum) + 1;
+            GameData.Instance.Party.Add(new Player(index, ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text, "Beer"));
+            await Navigation.PopModalAsync();
         }
         
-        private void DeleteMe(object sender, EventArgs e)
+        private async void DeleteMe(object sender, EventArgs e)
         {
-            var playerToDelete = GameData.Instance.Party.FirstOrDefault(a => a.IdNum == PiD);
-            GameData.Instance.Party.Remove(playerToDelete);
-            Navigation.PushAsync(new PlayerSetup());
+            GameData.Instance.Party.Remove(Player);
+            await Navigation.PopModalAsync();
         }
 
         private void PunishMe(object sender, EventArgs e)
         {
             //Show confirmation dialog for choosing one or more.
-                var result =  MaterialDialog.Instance.SelectChoiceAsync(title: "Select Your Punishments" ,selectedIndex: 0, choices: GameData.Instance.Punishment).Result;
-                Punish = GameData.Instance.Punishment[result];
-                //GameData.Instance.Punishment[result];
+            var result = MaterialDialog.Instance.SelectChoiceAsync(title: "Select Your Punishments", selectedIndex: 0,
+                choices: Constants.Punishment).Result;
+            Punish = Constants.Punishment[result];
+            //GameData.Instance.Punishment[result];
         }
         
     }

@@ -16,14 +16,12 @@ namespace CrossCardGame
             InitializeComponent();
         }
         
-        private void Button_OnClicked(object sender, EventArgs e)
+        private async void Button_OnClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PlayerInfo());
-            // TODO spawn a new window to make a Player
-            //GameData.Instance.Party.Add(new Player(1, "Fred", "Male", "Female"));
+            await Navigation.PushModalAsync(new PlayerInfo());
         }
 
-        private void MaterialCard_OnClicked(object sender, EventArgs e)
+        private async void MaterialCard_OnClicked(object sender, EventArgs e)
         {
 
             var item = sender as MaterialCard;
@@ -31,7 +29,7 @@ namespace CrossCardGame
             var player = item.BindingContext as Player;
             if (player == null) return;
             // destroy all humans
-            Navigation.PushAsync(new PlayerInfo(player.IdNum));
+            await Navigation.PushModalAsync(new PlayerInfo(player));
         }
     }
 }

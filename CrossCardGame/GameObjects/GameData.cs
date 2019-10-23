@@ -20,10 +20,6 @@ namespace CrossCardGame.GameObjects
                 return _instance;
             }
         }
-        
-        public string[] Genders { get; set; } = new[] {"Male", "Female"};
-        public string[] SexualPreferences { get; set; } = new [] {"Straight", "Gay", "Lesbian", "Bi"};
-        public string[] Punishment { get; set; } = new [] {"All", "Beer", "Dare", "Hard Liquor", "Weed"};
 
         public ObservableCollection<Player> Party { get; set; }
         

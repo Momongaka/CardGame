@@ -4,8 +4,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              xmlns:gameObjects="clr-namespace:CrossCardGame.GameObjects;assembly=CrossCardGame"
+             xmlns:Helpers="clr-namespace:CrossCardGame.Helpers;assembly=CrossCardGame"
              x:Class="CrossCardGame.PlayerInfo"
              x:Name="TopPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Helpers:NullVisibilityConverter x:Key="NullVisibilityConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <Grid>
         <!-- Things listed first go on the bottom in XAML -->
         <ui:MaterialIcon Source="SmokeyBanner" Aspect="Fill" HorizontalOptions="FillAndExpand"
@@ -24,10 +30,8 @@
                             <ui:MaterialTextField x:Name="ChoicePlayerName" Grid.Row="0" Placeholder="Player Name"
                                                   TextFontSize="15" HorizontalOptions="FillAndExpand" InputType="Text" />
                             <ui:MaterialTextField x:Name="ChoicePlayerGender" Grid.Row="1" Placeholder="Player Gender"
-                                                  Choices="{Binding Source={x:Static gameObjects:GameData.Instance}, Path=Genders}"
                                                   TextFontSize="15" InputType="Choice"/>
                             <ui:MaterialTextField x:Name="ChoicePlayerSexualPreference" Grid.Row="2" Placeholder="Sexual Preference"
-                                                  Choices="{Binding Source={x:Static gameObjects:GameData.Instance}, Path=SexualPreferences}"
                                                   TextFontSize="15" InputType="Choice"/>
                             <!--<ui:MaterialCheckboxGroup x:Name="ChoicePunishments" Grid.Row="3" FontSize="15" VerticalOptions="CenterAndExpand"
                                                   Choices="{Binding Source={x:Static gameObjects:GameData.Instance}, Path=Punishment}"/>-->
@@ -35,7 +39,8 @@
                         </Grid>
                     </StackLayout>
                     <Button VerticalOptions="End" Text="Add Player" FontSize="20" Clicked="AddParty" />
-                    <Button VerticalOptions="End" Text="Delete Player" FontSize="20" Clicked="DeleteMe" />
+                    <Button VerticalOptions="End" Text="Delete Player" FontSize="20" Clicked="DeleteMe" 
+                            IsVisible="{Binding Source={x:Reference TopPage}, Path=Player, Converter={StaticResource NullVisibilityConverter}}" />
                 </StackLayout>
             </ui:MaterialCard>
         </StackLayout>
