@@ -35,10 +35,10 @@
                                                   TextFontSize="15" InputType="Choice"/>
                             <!--<ui:MaterialCheckboxGroup x:Name="ChoicePunishments" Grid.Row="3" FontSize="15" VerticalOptions="CenterAndExpand"
                                                   Choices="{Binding Source={x:Static gameObjects:GameData.Instance}, Path=Punishment}"/>-->
-                            <Button Grid.Row="3" Text="PunishMe" VerticalOptions="End" HorizontalOptions="Center" Clicked="PunishMe"></Button>
+                            <Button Grid.Row="3" Text="PunishMe" VerticalOptions="End" HorizontalOptions="FillAndExpand" Clicked="PunishMe"></Button>
                         </Grid>
                     </StackLayout>
-                    <Button VerticalOptions="End" Text="Add Player" FontSize="20" Clicked="AddParty" />
+                    <Button VerticalOptions="End" Text="Add Player" FontSize="20" Grid.Column="0" Clicked="AddParty" />
                     <Button VerticalOptions="End" Text="Delete Player" FontSize="20" Clicked="DeleteMe" 
                             IsVisible="{Binding Source={x:Reference TopPage}, Path=Player, Converter={StaticResource NullVisibilityConverter}}" />
                 </StackLayout>

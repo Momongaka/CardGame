@@ -63,7 +63,6 @@ namespace CrossCardGame
             Punish = result.Select(a => Constants.Punishment[a]).ToList();
             //GameData.Instance.Punishment[result];
         }
-        
     }
 
 }

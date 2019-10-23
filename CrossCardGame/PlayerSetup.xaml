@@ -55,7 +55,15 @@
                             </ListView.ItemTemplate>
                         </ListView>
                     </ui:MaterialCard>
-                    <Button Text="Add Player" HorizontalOptions="Center" VerticalOptions="End" Clicked="Button_OnClicked"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Text="Add Player" HorizontalOptions="Center" VerticalOptions="End" Clicked="AddPlayer"/>
+                        <Button VerticalOptions="End" Text="Start Game" FontSize="20" Grid.Column="1" Clicked="StartGame" 
+                                IsVisible="{Binding Source={x:Reference},Path=Party, Converter={StaticResource NullVisibilityConverter}}"/>
+                    </Grid>
                 </StackLayout>
             </ui:MaterialCard>
         </StackLayout>

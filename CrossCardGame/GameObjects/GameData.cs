@@ -20,10 +20,11 @@ namespace CrossCardGame.GameObjects
                 return _instance;
             }
         }
-
         public ObservableCollection<Player> Party { get; set; }
         
         public Queue<string>[] Decks { get; set; }
+        
+        public string DeckString => $"{Decks} - {Decks} / {Decks}";
 
         private GameData()
         {

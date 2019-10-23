@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             xmlns:gameObjects="clr-namespace:CrossCardGame.GameObjects;assembly=CrossCardGame"
+             x:Class="CrossCardGame.DeckChoice"
+             x:Name="TopPage">
+    <Grid>
+        <!-- Things listed first go on the bottom in XAML -->
+        <ui:MaterialIcon Source="SmokeyBanner" Aspect="Fill" HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" />
+        <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Center">
+            <ui:MaterialCard BackgroundColor="Transparent">
+                <StackLayout Orientation="Vertical">
+                    <ui:MaterialLabel Text="Player # Draw a Card!"
+                                          VerticalTextAlignment="Start"
+                                          HorizontalTextAlignment="Center"
+                                          HorizontalOptions="CenterAndExpand"
+                                          TextColor="White"
+                                          FontAttributes="Bold"
+                                          FontSize="40" />
+                    <ui:MaterialCard CornerRadius="3" Elevation="2" VerticalOptions="FillAndExpand"
+                                     HorizontalOptions="FillAndExpand" IsClickable="True"
+                                     BackgroundColor="DarkGray" Padding="8">
+                        <ListView ItemsSource ="{Binding Source={x:Static gameObjects:GameData.Instance}, Path=Decks}"
+                                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ui:MaterialCard MinimumHeightRequest="50" VerticalOptions="CenterAndExpand" Padding="4"
+                                                         HorizontalOptions="FillAndExpand" IsClickable="True" Clicked="DrawCard">
+                                            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand">
+                                                <ui:MaterialLabel Text="{Binding DeckString}" FontSize="Medium" Margin="0,4,0,0" FontAttributes="Bold" />
+                                            </StackLayout>
+                                        </ui:MaterialCard>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </ui:MaterialCard>
+                </StackLayout>
+            </ui:MaterialCard>
+        </StackLayout>
+    </Grid>
+</ContentPage>

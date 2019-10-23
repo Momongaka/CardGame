@@ -16,7 +16,7 @@ namespace CrossCardGame
             InitializeComponent();
         }
         
-        private async void Button_OnClicked(object sender, EventArgs e)
+        private async void AddPlayer(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new PlayerInfo());
         }
@@ -30,6 +30,11 @@ namespace CrossCardGame
             if (player == null) return;
             // destroy all humans
             await Navigation.PushModalAsync(new PlayerInfo(player));
+        }
+
+        private void StartGame(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new DeckChoice());
         }
     }
 }
