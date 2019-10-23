@@ -40,7 +40,7 @@ namespace CrossCardGame
                 GameData.Instance.Party.Remove(Player);
             int index = 1;
             if (GameData.Instance.Party.Count > 0) index = GameData.Instance.Party.Max(a => a.IdNum) + 1;
-            GameData.Instance.Party.Add(new Player(index, ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text, ));
+            GameData.Instance.Party.Add(new Player(index, ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text, "Beer"));
             await Navigation.PopModalAsync();
         }
         
