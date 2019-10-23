@@ -7,6 +7,7 @@ using System.Xml.XPath;
 using CrossCardGame.GameObjects;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XF.Material.Forms;
 using XF.Material.Forms.UI;
 using XF.Material.Forms.UI.Dialogs;
 
@@ -29,6 +30,11 @@ namespace CrossCardGame
         }
         private async void AddParty(object sender, EventArgs e)
         {
+            if (Punish == null)
+            {
+                await MaterialDialog.Instance.AlertAsync("Select a Punishment");
+                return;
+            }
             if (Player != null)
                 GameData.Instance.Party.Remove(Player);
             int index = 1;
@@ -43,11 +49,12 @@ namespace CrossCardGame
             await Navigation.PopModalAsync();
         }
 
-        private void PunishMe(object sender, EventArgs e)
+        private async void PunishMe(object sender, EventArgs e)
         {
             //Show confirmation dialog for choosing one or more.
-            var result = MaterialDialog.Instance.SelectChoiceAsync(title: "Select Your Punishments", selectedIndex: 0,
-                choices: Constants.Punishment).Result;
+            var result = await MaterialDialog.Instance.SelectChoiceAsync(title: "Select Your Punishments", selectedIndex: 0,
+                choices: Constants.Punishment);
+            if (result == -1) return;
             Punish = Constants.Punishment[result];
             //GameData.Instance.Punishment[result];
         }
