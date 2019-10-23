@@ -22,16 +22,16 @@
                                           FontSize="40" />
                     <ui:MaterialCard CornerRadius="3" Elevation="2" VerticalOptions="FillAndExpand"
                                      HorizontalOptions="FillAndExpand" IsClickable="True"
-                                     BackgroundColor="DarkGray">
+                                     BackgroundColor="DarkGray" Padding="8">
                         <ListView ItemsSource ="{Binding Source={x:Static gameObjects:GameData.Instance}, Path=Party}"
-                                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="True">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <ui:MaterialCard MinimumHeightRequest="40" VerticalOptions="Fill" Padding="1"
+                                        <ui:MaterialCard MinimumHeightRequest="50" VerticalOptions="CenterAndExpand" Padding="4"
                                                          HorizontalOptions="FillAndExpand" IsClickable="True" Clicked="MaterialCard_OnClicked">
                                             <!-- The grid is only needed if more data will be put -->
-                                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="StartAndExpand">
+                                            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand">
                                                 <!-- <Grid> -->
                                                 <!--     <Grid.ColumnDefinitions> -->
                                                 <!--         <ColumnDefinition Width="*"/> -->
@@ -41,7 +41,8 @@
                                                     <!-- <ui:MaterialTextField Grid.Column="0" Placeholder="Player" Text="{Binding Name}" TextFontSize="15"></ui:MaterialTextField> -->
                                                         <!-- <ui:MaterialTextField Grid.Column="1" Placeholder="Gender" Text="{Binding Gender}" TextFontSize="15"></ui:MaterialTextField> -->
                                                         <!-- <ui:MaterialTextField Grid.Column="2" Placeholder="Gender\Pref" Text="{Binding GenderPreference}" TextFontSize="15"></ui:MaterialTextField> -->
-                                                <ui:MaterialLabel Text="{Binding PlayerString}" FontSize="Medium" FontAttributes="Bold"/>
+                                                <ui:MaterialLabel Text="{Binding PlayerString}" FontSize="Medium" Margin="0,4,0,0" FontAttributes="Bold" />
+                                                <ui:MaterialLabel Text="{Binding PunishmentString}" FontSize="Medium" Margin="4" />
                                                 
                                                 <!-- <ui:MaterialLabel Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold"/> -->
                                                 <!-- <ui:MaterialLabel Margin="0,0,8,8" Text="{Binding Gender}" FontSize="Medium"/> -->

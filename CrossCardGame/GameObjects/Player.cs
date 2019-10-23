@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace CrossCardGame.GameObjects
 {
@@ -8,9 +10,11 @@ namespace CrossCardGame.GameObjects
         public string Name { get; private set; }
         public string Gender { get; private set; }
         public string SexualPreference { get; private set; }
-        public string PunishmentPreference { get; private set; }
+        public ObservableCollection<string> PunishmentPreference { get; private set; }
         
-        public string PlayerString => Name + " / " + Gender + " / " + SexualPreference + " / " + PunishmentPreference;
+        public string PlayerString => $"{Name} / {Gender} / {SexualPreference}";
+        
+        public string PunishmentString => string.Join(", ", PunishmentPreference);
 
         public Player()
         {
@@ -21,13 +25,13 @@ namespace CrossCardGame.GameObjects
             IdNum = id;
         }
 
-        public Player(int id, string name, string gender, string sexualPreference, string punishmentPreference)
+        public Player(int id, string name, string gender, string sexualPreference, List<string> punishmentPreference)
         {
             IdNum = id;
             Name = name;
             Gender = gender;
             SexualPreference = sexualPreference;
-            PunishmentPreference = punishmentPreference;
+            PunishmentPreference = new ObservableCollection<string>(punishmentPreference);
         }
     }
 }

@@ -28,6 +28,10 @@ namespace CrossCardGame
         public PlayerInfo(Player player) : this()
         {
             Player = player;
+            ChoicePlayerName.Text = Player.Name;
+            ChoicePlayerGender.SelectedChoice = Player.Gender;
+            ChoicePlayerSexualPreference.SelectedChoice = Player.SexualPreference;
+            OnPropertyChanged("Player");
         }
         private async void AddParty(object sender, EventArgs e)
         {
@@ -40,7 +44,7 @@ namespace CrossCardGame
                 GameData.Instance.Party.Remove(Player);
             int index = 1;
             if (GameData.Instance.Party.Count > 0) index = GameData.Instance.Party.Max(a => a.IdNum) + 1;
-            GameData.Instance.Party.Add(new Player(index, ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text, "Beer"));
+            GameData.Instance.Party.Add(new Player(index, ChoicePlayerName.Text, ChoicePlayerGender.Text, ChoicePlayerSexualPreference.Text, Punish));
             await Navigation.PopModalAsync();
         }
         
